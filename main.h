@@ -1,0 +1,76 @@
+#ifndef MAIN_H
+#define MAIN_H
+
+#include <stdio.h>
+#include <error.h>
+#include <fcntl.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+extern char **environ;
+/**
+ * struct test - ======
+ * @test2: ====
+ * @test3: =======
+ */
+typedef struct test
+{
+	char *test2;
+	void (*test3)(char *, const char *);
+} test;
+
+/**
+ * struct foster_t - =======
+ * @ptr: =====
+ * @prog_name: ======
+ * @errno: ====
+ * @iscolon: ==
+ * @ANDstatus: ==
+ * @ind: ====
+ * @exitcode: ===
+ * @custom_env: ===
+ * @data: ==
+ * @setlen: ===
+ * @envlen: ===
+ * @index: ===
+ */
+typedef struct foster_t
+{
+	char *ptr;
+	int errno;
+	int exitcode;
+	int iscolon;
+	char *prog_name;
+	int ANDstatus;
+	char ind;
+	char *custom_env[18000];
+	char *data[200];
+	int index;
+	int setlen;
+	int envlen;
+} foster_t;
+foster_t foster;
+void print_no(long num);
+void _unsetenv(char *arg);
+void _setenv(char *ptr1, char *ptr2);
+void _loadenv(char **e);
+void  _exec(char **args, char *echo);
+void _env(char **env);
+void exitshell(char **arg, char *cmd);
+int isletter(char *arg);
+void execfile(char *file);
+void free_memmory2(char **arg);
+void _writechar(char c);
+void _colon(char *arg);
+void free_memmory(char **arg);
+void reset_arg(char **arg);
+void print_no1(long num);
+void execute_toks(char **toks);
+void execute_toks_ANDOR(char **toks);
+void _ANDOR(char *arg);
+
+#endif
