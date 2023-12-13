@@ -42,7 +42,7 @@ void exitshell(char **arg, char *cmd)
 	}
 	else
 	{
-		no = atoi(arg[0]);
+		no = atoi(arg[1]);
 		free(cmd);
 		foster.exitcode = no;
 		free_memmory2(foster.data);
