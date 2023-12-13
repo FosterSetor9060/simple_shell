@@ -15,6 +15,7 @@ int main(int argc, char **argv)
 	char *unset[4] = {NULL};
 	size_t buff = 0;
 	int i = 0;
+	char colon = ' ';
 	char copy[18000];
 
 	foster.ANDstatus = 0;
@@ -84,6 +85,7 @@ int main(int argc, char **argv)
 			if (strchr(foster.ptr, ';') != NULL)
 			{
 				foster.errno++;
+				colon = ';';
 				foster.iscolon = 1;
 				_colon(foster.ptr);
 				foster.iscolon = 0;
@@ -146,5 +148,7 @@ int main(int argc, char **argv)
 		free(foster.ptr);
 		free_memmory2(foster.data);
 	}
+	if ((!isatty(STDIN_FILENO)) && foster.exitcode && colon == ';')
+		exit(2);
 	return (0);
 }

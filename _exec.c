@@ -77,6 +77,7 @@ void _exec(char **args, char *echo)
 				foster.ANDstatus = 0;
 			if (exit_status == 1)
 				foster.exitcode = exit_status;
+			foster.exitcode = exit_status;
 
 			if (exit_status  != 0 && (!isatty(STDIN_FILENO) && !(foster.iscolon == 1)))
 			{
