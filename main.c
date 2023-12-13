@@ -61,7 +61,14 @@ int main(int argc, char **argv)
 			}
 			if (strcmp(unset[0], "unsetenv") == 0)
 			{
+				if (unset[1] != NULL)
+				{
 				_unsetenv(unset[1]);
+				}
+				else
+				{
+					write(2, "wrong format\n", strlen("wrong format\n"));
+				}
 				reset_arg(unset);
 				continue;
 			}
