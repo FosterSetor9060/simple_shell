@@ -40,7 +40,7 @@ void _exec(char **args, char *echo)
 				execve("/bin/echo", args, environ);
 			}
 		}
-		else if (strcmp(args[0], "ls") == 0)
+		else if (strcmp(args[0], "ls") == 0 && strchr(getenv("PATH"), '/') != NULL)
 		{
 			execve("/bin/ls", args, environ);
 		}
