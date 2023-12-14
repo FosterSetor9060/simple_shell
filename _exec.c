@@ -41,7 +41,7 @@ void _exec(char **args, char *echo)
 			}
 		}
 		else if (strcmp(args[0], "ls") == 0 && strchr(getenv("PATH"), '/') != NULL
-				&& environ[0] != NULL)
+				&& environ != NULL)
 		{
 			execve("/bin/ls", args, environ);
 		}

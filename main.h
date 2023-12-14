@@ -37,6 +37,7 @@ typedef struct test
  * @setlen: ===
  * @envlen: ===
  * @index: ===
+ * @checkenv: ==
  */
 typedef struct foster_t
 {
@@ -52,6 +53,7 @@ typedef struct foster_t
 	int index;
 	int setlen;
 	int envlen;
+	char *checkenv;
 } foster_t;
 foster_t foster;
 void print_no(long num);
