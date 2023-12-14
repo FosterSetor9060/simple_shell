@@ -40,7 +40,7 @@ void _exec(char **args, char *echo)
 				execve("/bin/echo", args, environ);
 			}
 		}
-		else if (strcmp(args[0], "ls") == 0 && isatty(STDIN_FILENO))
+		else if (strcmp(args[0], "ls") == 0)
 		{
 			execve("/bin/ls", args, environ);
 		}
